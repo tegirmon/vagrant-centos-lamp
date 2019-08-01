@@ -6,7 +6,7 @@ Requirements
 -----------
 
 * Virtualbox
-* Vagrant >= 1.7.0
+* Vagrant >= 2
 
 Installation:
 -------------
@@ -28,14 +28,11 @@ What's inside:
 
 Installed software:
 
-* Centos 7.4 (boxes built using templates from the [Bento project](https://app.vagrantup.com/bento/boxes/centos-7.4))
+* Centos 7+ (boxes built using templates from CentOS boxes(https://app.vagrantup.com/centos/boxes/7))
 * PHP 7.1
-* MySQL Community Server 5.7
+* MariaDB
 * Apache
-* Xdebug
-* Composer
-* PhpMyAdmin 4.5.4.1
-* Git
+* PhpMyAdmin
 
 Notes
 -----
@@ -48,16 +45,12 @@ All hosts should be mapped to `192.168.33.10`:
 
     192.168.33.10 local.dev someyourotherhost.dev
 
-### MySQL
+### MariaDB
 
-Logging in can be done with username=root, password=mySQL@123
+Logging in can be done with username=root, password=
 
 ### phpMyAdmin
 
 phpMyAdmin is available on every domain. For example:
 
-    http://local.dev/phpmyadmin
-
-### Composer
-
-Composer binary is installed globally (to `/usr/local/bin`), so you can simply call `composer` from any directory.
+    http://127.0.0.1:8080/phpmyadmin

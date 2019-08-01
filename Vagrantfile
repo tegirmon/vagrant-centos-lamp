@@ -8,7 +8,14 @@ Vagrant.configure("2") do |config|
 	vb.name = "vm-centos-lamp"
   end
   
-  config.vm.synced_folder "./www", "/var/www"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "./www", "/var/www/html", owner: "root", group: "root", mount_options: ["dmode=775,fmode=664"]
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vbguest.auto_update = false
+  end
   
   config.vm.provision "shell", path: "shell_provisioner/vagrant.bootstrap.sh"
   config.vm.provision "shell", inline: "systemctl restart httpd.service", run: "always"
