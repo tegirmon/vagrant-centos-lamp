@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
   end
   
   config.vm.provision "shell", path: "shell_provisioner/vagrant.bootstrap.sh"
+  config.vm.provision "shell", inline: "setenforce 0", run: "always"
   config.vm.provision "shell", inline: "systemctl restart httpd.service", run: "always"
 
 end

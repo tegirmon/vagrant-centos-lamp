@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# disable SELinux 
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/'
-# setenforce 0
-
 # add the EPEL repo
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY*
 yum -y install epel-release

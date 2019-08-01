@@ -20,7 +20,7 @@ Clone this repository
 Go to the repository folder and launch the box
 
     $ cd [repo]
-    $ vagrant up
+    $ vagrant up --provision
 
 
 What's inside:
@@ -40,10 +40,7 @@ Notes
 
 ### Accessing your hosts via your local web browser
 
-In order to access vagrant hosts via your local browser you will need to edit your hosts file (`/private/etc/hosts` in Macs, `c:\Windows\System32\Drivers\etc\hosts` in Windows, `/etc/hosts` in Linux).
-All hosts should be mapped to `192.168.33.10`:
-
-    192.168.33.10 local.dev someyourotherhost.dev
+    http://127.0.0.1:8080
 
 ### MariaDB
 
