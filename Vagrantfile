@@ -3,9 +3,9 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "bento/centos-7.4"
+  config.vm.box = "centos/7"
   config.vm.provider :virtualbox do |vb|
-	vb.name = "vagrant-centos-lamp"
+	vb.name = "vm-centos-lamp"
   end
   
   config.vm.synced_folder "./www", "/var/www"
