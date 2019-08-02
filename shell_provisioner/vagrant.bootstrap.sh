@@ -42,4 +42,5 @@ echo "==========================================================================
 echo "   Installing PhpMyADMIN"
 echo "================================================================================"
 yum -y install phpMyAdmin
+sed -i 's/Require ip 127.0.0.1/Require all granted/' /etc/httpd/conf.d/phpMyAdmin.conf
 
